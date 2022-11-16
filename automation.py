@@ -37,7 +37,7 @@ if input_file_name=='/var/lib/jenkins/workspace/Automation/person_dim_test_suite
     print('input product name is invalid')
 else: exit
 
-reset_values=input("Input True or false to reset all values")
+reset_values=sys.argv[3]
 if reset_values=="True":
     ws['A2'].value= ws['A3'].value=ws['A4'].value=ws['A5'].value=ws['A6'].value= ws['A7'].value=ws['A8'].value=ws['A9'].value=ws['A10'].value=ws['A11'].value=ws['A12'].value=ws['A13'].value=ws['A14'].value=ws['A15'].value=ws['A16'].value=ws['A17'].value=ws['A18'].value=ws['A19'].value=ws['A20'].value=ws['A21'].value=ws['A22'].value=ws['A23'].value=ws['A24'].value=ws['A25'].value=ws['A26'].value=ws['A27'].value=ws['A28'].value=ws['A29'].value=ws['A30'].value=0
     wb.save('/var/lib/jenkins/workspace/Automation/Testsuite.xlsx')
