@@ -14,7 +14,7 @@ ws['B11'].value,ws['B12'].value,ws['B13'].value,ws['B14'].value,ws['B15'].value,
 ws['B17'].value,ws['B18'].value,ws['B19'].value,ws['B20'].value,ws['B21'].value,ws['B22'].value,
 ws['B23'].value,ws['B24'].value,ws['B25'].value,ws['B26'].value,ws['B27'].value,ws['B28'].value,
 ws['B29'].value,ws['B30'].value]
-input_file_name= sys.argv[0]
+input_file_name= sys.argv[1]
 if input_file_name in test_suite_file_path:
     t1=test_suite_file_path.index(input_file_name)+2
     ws['A'+str(t1)].value=1
@@ -23,7 +23,7 @@ if input_file_name in test_suite_file_path:
 wb2=load_workbook(input_file_name)
 ws2 = wb2['Testcases']
 if input_file_name=='/var/lib/jenkins/workspace/Automation/person_dim_test_suite.xlsx':
-   input_product_name=sys.argv[1]
+   input_product_name=sys.argv[2]
    if input_product_name=='telecom-dev':
       ws2['A2'].value=ws2['A3'].value=ws2['A4'].value=1
       wb2.save(input_file_name)
