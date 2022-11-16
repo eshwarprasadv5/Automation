@@ -1,5 +1,5 @@
 from openpyxl import Workbook, load_workbook
-wb = load_workbook('C:/Users/V.Eshwarprasad/Documents/Automation/Testsuite.xlsx')
+wb = load_workbook('/var/lib/jenkins/workspace/Automation/Testsuite.xlsx')
 ws = wb['TestSuite']
 test_suite_values=[ws['A2'].value, ws['A3'].value,ws['A4'].value,
 ws['A5'].value,ws['A6'].value, ws['A7'].value,ws['A8'].value,ws['A9'].value,ws['A10'].value,
@@ -18,10 +18,10 @@ if input_file_name in test_suite_file_path:
     t1=test_suite_file_path.index(input_file_name)+2
     ws['A'+str(t1)].value=1
     print(ws['A'+str(t1)].value)
-    wb.save('C:/Users/V.Eshwarprasad/Documents/Automation/Testsuite.xlsx')
+    wb.save('/var/lib/jenkins/workspace/Automation/Testsuite.xlsx')
 wb2=load_workbook(input_file_name)
 ws2 = wb2['Testcases']
-if input_file_name=='C:/Users/V.Eshwarprasad/Documents/Automation/person_dim_test_suite.xlsx':
+if input_file_name=='/var/lib/jenkins/workspace/Automation/person_dim_test_suite.xlsx':
    input_product_name=input("please enter product name")
    if input_product_name=='telecom-dev':
       ws2['A2'].value=ws2['A3'].value=ws2['A4'].value=1
