@@ -16,9 +16,9 @@ if(input_file_name in test_folders_loc):
     sh['A'+str(t1)].value=1
     print(sh['A'+str(t1)].value)
     wb.save('/var/lib/jenkins/workspace/Automation/Testsuite.xlsx')
-wb2=load_workbook(input_file_name)
-sh2 = wb2['Testcases']
 if input_file_name=='/var/lib/jenkins/workspace/Automation/person_dim_test_suite.xlsx':
+   wb2=load_workbook(input_file_name)
+   sh2 = wb2['Testcases']
    input_product_name = sys.argv[2]
    if input_product_name=='telecom-dev':
       sh2['A2'].value=sh2['A3'].value=sh2['A4'].value=1
