@@ -13,11 +13,16 @@ print(test_suite_val1)
 input_file_name = sys.argv[1]
 reset_values=sys.argv[3]
 if reset_values=="True":
-    sh['A2:A30'].value=0
-    wb.save('C:/Users/V.Eshwarprasad/Documents/Automation/Testsuite.xlsx')
-    sh['A2:A11'].value=0
+    current_row=2
+    for eachRow in sh.iter_rows():
+        sh.cell(row=current_row,column=1).value=0
+        current_row+=1
+    wb.save('/var/lib/jenkins/workspace/Automation/Testsuite.xlsx')
+    current_row2=2
+    for eachRow2 in sh2.iter_rows():
+        sh2.cell(row=current_row2,column=1).value=0
+        current_row2+=1
     wb2.save(input_file_name)
-else: exit
 if(input_file_name in test_folders_loc):
     t1=test_folders_loc.index(input_file_name)+1
     sh['A'+str(t1)].value=1
