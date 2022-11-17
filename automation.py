@@ -1,5 +1,7 @@
 from openpyxl import Workbook, load_workbook
 import sys
+input_file_name = sys.argv[1]
+reset_values=sys.argv[3]
 wb = load_workbook('/var/lib/jenkins/workspace/Automation/Testsuite.xlsx')
 sh=wb['TestSuite'] 
 wb2=load_workbook(input_file_name)
@@ -12,8 +14,6 @@ test_suite_val1=[]
 for col in sh['A']:
         test_suite_val1.append(col.value)
 print(test_suite_val1)
-input_file_name = sys.argv[1]
-reset_values=sys.argv[3]
 if reset_values=="True":
     current_row=2
     for eachRow in sh.iter_rows():
