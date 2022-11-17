@@ -2,6 +2,8 @@ from openpyxl import Workbook, load_workbook
 import sys
 wb = load_workbook('/var/lib/jenkins/workspace/Automation/Testsuite.xlsx')
 sh=wb['TestSuite'] 
+wb2=load_workbook(input_file_name)
+sh2 = wb2['Testcases']
 test_folders_loc=[]
 for row in sh['B']:
         test_folders_loc.append(row.value)
@@ -29,8 +31,6 @@ if(input_file_name in test_folders_loc):
     sh['A'+str(t1)].value=1
     print(sh['A'+str(t1)].value)
     wb.save('/var/lib/jenkins/workspace/Automation/Testsuite.xlsx')
-wb2=load_workbook(input_file_name)
-sh2 = wb2['Testcases']
 if input_file_name=='/var/lib/jenkins/workspace/Automation/person_dim_test_suite.xlsx':
    input_product_name = sys.argv[2]
    if input_product_name=='telecom-dev':
