@@ -11,6 +11,13 @@ for col in sh['A']:
         test_suite_val1.append(col.value)
 print(test_suite_val1)
 input_file_name = sys.argv[1]
+reset_values=sys.argv[3]
+if reset_values=="True":
+    sh['A2:A30'].value=0
+    wb.save('C:/Users/V.Eshwarprasad/Documents/Automation/Testsuite.xlsx')
+    sh['A2:A11'].value=0
+    wb2.save(input_file_name)
+else: exit
 if(input_file_name in test_folders_loc):
     t1=test_folders_loc.index(input_file_name)+1
     sh['A'+str(t1)].value=1
@@ -32,3 +39,5 @@ if input_file_name=='/var/lib/jenkins/workspace/Automation/person_dim_test_suite
    else:
     print('input product name is invalid')
 else: exit
+        
+
