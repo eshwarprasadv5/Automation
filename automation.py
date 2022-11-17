@@ -10,7 +10,7 @@ test_suite_val1=[]
 for col in sh['A']:
         test_suite_val1.append(col.value)
 print(test_suite_val1)
-input_file_name = '/var/lib/jenkins/workspace/Automation/person_dim_test_suite.xlsx'
+input_file_name = sys.argv[1]
 if(input_file_name in test_folders_loc):
     t1=test_folders_loc.index(input_file_name)+1
     sh['A'+str(t1)].value=1
@@ -19,7 +19,7 @@ if(input_file_name in test_folders_loc):
 wb2=load_workbook(input_file_name)
 sh2 = wb2['Testcases']
 if input_file_name=='/var/lib/jenkins/workspace/Automation/person_dim_test_suite.xlsx':
-   input_product_name = 'mobi-dev'
+   input_product_name = sys.argv[2]
    if input_product_name=='telecom-dev':
       sh2['A2'].value=sh2['A3'].value=sh2['A4'].value=1
       wb2.save(input_file_name)
