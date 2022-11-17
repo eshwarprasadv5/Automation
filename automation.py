@@ -11,7 +11,7 @@ for col in sh['A']:
         test_suite_val1.append(col.value)
 print(test_suite_val1)
 input_file_name = '/var/lib/jenkins/workspace/Automation/person_dim_test_suite.xlsx'
-if input_file_name in test_folders_loc:
+if(input_file_name in test_folders_loc):
     t1=test_folders_loc.index(input_file_name)+1
     sh['A'+str(t1)].value=1
     print(sh['A'+str(t1)].value)
