@@ -23,6 +23,7 @@ if reset_values=="True":
         sh2.cell(row=current_row2,column=1).value=0
         current_row2+=1
     wb2.save(input_file_name)
+else: exit
 if(input_file_name in test_folders_loc):
     t1=test_folders_loc.index(input_file_name)+1
     sh['A'+str(t1)].value=1
